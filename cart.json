@@ -1,0 +1,411 @@
+{
+	"info": {
+		"_postman_id": "0cb3abad-d9c3-47be-92b4-2bc91761a03b",
+		"name": "pranesh s_carts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50230715",
+		"_collection_link": "https://kavinpraneshs24bca126-7422919.postman.co/workspace/api-testing~d807b9af-15f5-441c-831a-2280020171a7/collection/50230715-0cb3abad-d9c3-47be-92b4-2bc91761a03b?action=share&source=collection_link&creator=50230715"
+	},
+	"item": [
+		{
+			"name": "all data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.collectionVariables.set(\"JD\",pm.response.json().id);\r",
+							"pm.test(\"staus code verify\",function()\r",
+							"{\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"verifyed\",function()\r",
+							"{\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"pm.test(\"status code in range\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.code).to.be.within(200,404);\r",
+							"});\r",
+							"pm.test(\"range of the status code verify\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201,205]);\r",
+							"})\r",
+							"pm.test(\"status code below verify\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.code).to.be.below(204);\r",
+							"})\r",
+							"pm.test(\"status code above verify\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.code).to.be.above(199);\r",
+							"})\r",
+							"pm.test(\"verify response time\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+							"})\r",
+							"pm.test(\"verify response time\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.responseTime).to.be.above(0);\r",
+							"})\r",
+							"pm.test(\"check content type header is present\",function()\r",
+							"{\r",
+							"    pm.response.to.have.header(\"content-type\");\r",
+							"})\r",
+							"pm.test(\"check value of content-type\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.headers.get(\"content-type\")).to.eql(\"application/json\");\r",
+							"})\r",
+							"pm.test(\"check value of content-type\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.headers.get(\"content-type\")).to.include(\"son\");\r",
+							"})\r",
+							"\r",
+							"pm. collectionVariables.set(\"id\", pm.response.json().id);"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://69218850512fb4140be082f4.mockapi.io/carts",
+					"protocol": "https",
+					"host": [
+						"69218850512fb4140be082f4",
+						"mockapi",
+						"io"
+					],
+					"path": [
+						"carts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "new data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.collectionVariables.set(\"JD\",pm.response.json().id);\r",
+							"\r",
+							"pm.test(\"staus code verify\",function()\r",
+							"{\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"pm.test(\"verifyed\",function()\r",
+							"{\r",
+							"    pm.response.to.have.status(\"Created\");\r",
+							"});\r",
+							"pm.test(\"status code in range\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.code).to.be.within(200,404);\r",
+							"});\r",
+							"pm.test(\"range of the status code verify\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201,205]);\r",
+							"})\r",
+							"pm.test(\"status code below verify\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.code).to.be.below(204);\r",
+							"})\r",
+							"pm.test(\"status code above verify\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.code).to.be.above(199);\r",
+							"})\r",
+							"pm.test(\"verify response time\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+							"})\r",
+							"pm.test(\"verify response time\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.responseTime).to.be.above(0);\r",
+							"})\r",
+							"pm.test(\"check content type header is present\",function()\r",
+							"{\r",
+							"    pm.response.to.have.header(\"content-type\");\r",
+							"})\r",
+							"pm.test(\"check value of content-type\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.headers.get(\"content-type\")).to.eql(\"application/json\");\r",
+							"})\r",
+							"pm.test(\"check value of content-type\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.headers.get(\"content-type\")).to.include(\"son\");\r",
+							"})\r",
+							"\r",
+							"pm. collectionVariables.set(\"id\", pm.response.json().id);"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://69218850512fb4140be082f4.mockapi.io/carts",
+					"protocol": "https",
+					"host": [
+						"69218850512fb4140be082f4",
+						"mockapi",
+						"io"
+					],
+					"path": [
+						"carts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get by id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.collectionVariables.set(\"JD\",pm.response.json().id);\r",
+							"pm.test(\"staus code verify\",function()\r",
+							"{\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"verifyed\",function()\r",
+							"{\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"pm.test(\"status code in range\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.code).to.be.within(200,404);\r",
+							"});\r",
+							"pm.test(\"range of the status code verify\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201,205]);\r",
+							"})\r",
+							"pm.test(\"status code below verify\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.code).to.be.below(204);\r",
+							"})\r",
+							"pm.test(\"status code above verify\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.code).to.be.above(199);\r",
+							"})\r",
+							"pm.test(\"verify response time\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+							"})\r",
+							"pm.test(\"verify response time\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.responseTime).to.be.above(0);\r",
+							"})\r",
+							"pm.test(\"check content type header is present\",function()\r",
+							"{\r",
+							"    pm.response.to.have.header(\"content-type\");\r",
+							"})\r",
+							"pm.test(\"check value of content-type\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.headers.get(\"content-type\")).to.eql(\"application/json\");\r",
+							"})\r",
+							"pm.test(\"check value of content-type\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.headers.get(\"content-type\")).to.include(\"son\");\r",
+							"})\r",
+							"\r",
+							"pm. collectionVariables.set(\"id\", pm.response.json().id);"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://69218850512fb4140be082f4.mockapi.io/carts/{{JD}}",
+					"protocol": "https",
+					"host": [
+						"69218850512fb4140be082f4",
+						"mockapi",
+						"io"
+					],
+					"path": [
+						"carts",
+						"{{JD}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "modifiy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"staus code verify\",function()\r",
+							"{\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"verifyed\",function()\r",
+							"{\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"pm.test(\"status code in range\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.code).to.be.within(200,404);\r",
+							"});\r",
+							"pm.test(\"range of the status code verify\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201,205]);\r",
+							"})\r",
+							"pm.test(\"status code below verify\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.code).to.be.below(201);\r",
+							"})\r",
+							"pm.test(\"status code above verify\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.code).to.be.above(199);\r",
+							"})\r",
+							"pm.test(\"verify response time\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.responseTime).to.be.above(0);\r",
+							"})\r",
+							"pm.test(\"check content type header is present\",function()\r",
+							"{\r",
+							"    pm.response.to.have.header(\"content-type\");\r",
+							"})\r",
+							"pm.test(\"check value of content-type\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.headers.get(\"content-type\")).to.eql(\"application/json\");\r",
+							"})\r",
+							"pm.test(\"check value of content-type\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.headers.get(\"content-type\")).to.include(\"son\");\r",
+							"})\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://69218850512fb4140be082f4.mockapi.io/carts/{{JD}}",
+					"protocol": "https",
+					"host": [
+						"69218850512fb4140be082f4",
+						"mockapi",
+						"io"
+					],
+					"path": [
+						"carts",
+						"{{JD}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"staus code verify\",function()\r",
+							"{\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"verifyed\",function()\r",
+							"{\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"pm.test(\"status code in range\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.code).to.be.within(200,404);\r",
+							"});\r",
+							"pm.test(\"range of the status code verify\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201,205]);\r",
+							"})\r",
+							"pm.test(\"status code below verify\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.code).to.be.below(201);\r",
+							"})\r",
+							"pm.test(\"status code above verify\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.code).to.be.above(199);\r",
+							"})\r",
+							"pm.test(\"verify response time\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"})\r",
+							"pm.test(\"verify response time\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.responseTime).to.be.above(0);\r",
+							"})\r",
+							"pm.test(\"check content type header is present\",function()\r",
+							"{\r",
+							"    pm.response.to.have.header(\"content-type\");\r",
+							"})\r",
+							"pm.test(\"check value of content-type\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.headers.get(\"content-type\")).to.eql(\"application/json\");\r",
+							"})\r",
+							"pm.test(\"check value of content-type\",function()\r",
+							"{\r",
+							"    pm.expect(pm.response.headers.get(\"content-type\")).to.include(\"son\");\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://69218850512fb4140be082f4.mockapi.io/carts/{{JD}}",
+					"protocol": "https",
+					"host": [
+						"69218850512fb4140be082f4",
+						"mockapi",
+						"io"
+					],
+					"path": [
+						"carts",
+						"{{JD}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "JD",
+			"value": ""
+		},
+		{
+			"key": "id",
+			"value": ""
+		}
+	]
+}
